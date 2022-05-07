@@ -1,21 +1,14 @@
 import type { NextPage } from 'next';
-import styled from 'styled-components/macro';
 
-import { AppHeadTitle } from 'components/AppHeadTitle';
-import { Footer } from 'components/Footer';
-import { Main } from 'components/Main';
-
-export const Container = styled.div`
-  padding: 0 2rem;
-`;
-
-const Home: NextPage = () => {
+const Home: NextPage = (): JSX.Element => {
   return (
-    <Container>
-      <AppHeadTitle />
-      <Main />
-      <Footer />
-    </Container>
+    <div>
+      <h1>Welcome!</h1>
+      <p>
+        Next.js is a full stack web framework by Vercel. This is a simple blog app to demonstrate
+        the power of Next.js.
+      </p>
+    </div>
   );
 };
 
