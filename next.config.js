@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
 
+const withPlugins = require('next-compose-plugins');
 const withImages = require('next-images');
 
-const nextConfig = withImages({
+const nextConfig = {
   reactStrictMode: true,
   exclude: path.resolve(__dirname, 'src/assets/images/svg'),
   images: {
@@ -38,6 +39,6 @@ const nextConfig = withImages({
     NEXT_APP_NODE_ENV: process.env.NEXT_APP_NODE_ENV,
     NEXT_APP_BASE_URL: process.env.NEXT_APP_BASE_URL,
   },
-});
+};
 
-module.exports = nextConfig;
+module.exports = withPlugins([[withImages]], nextConfig);
